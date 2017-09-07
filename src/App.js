@@ -24,6 +24,14 @@ class App extends Component {
     })
   }
 
+  testing = () => {
+    console.log(this)
+  }
+
+  thisTesting() {
+    console.log(this)
+  }
+
   render() {
     return (
       <div className="App">
@@ -36,6 +44,10 @@ class App extends Component {
             taskList={this.state.taskList}
             addTask={this.addTask}
             clearTask={this.state.clearTask}/>
+          <ThisLogger
+            testing={this.testing}
+            thisTesting={this.thisTesting}
+            propExample={'I am the props object'}/>
 
         </p>
       </div>
