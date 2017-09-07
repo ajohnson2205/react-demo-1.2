@@ -3,12 +3,15 @@ import logo from './logo.svg';
 import './App.css';
 
 import ToDoList from './components/ToDoList/ToDoList';
+import ThisLogger from './components/ThisLogger/ThisLogger';
+import LukeComponent from './components/StarWarsCharacters/LukeComponent';
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      taskList: ['This is my first task']
+      taskList: ['This is my first task'],
+      clearTask: false
     }
   }
 
@@ -16,7 +19,8 @@ class App extends Component {
     let newTaskList = this.state.taskList.slice()
     newTaskList.push(task)
     this.setState({
-      taskList: newTaskList
+      taskList: newTaskList,
+      clearTask: true
     })
   }
 
@@ -30,7 +34,9 @@ class App extends Component {
         <p className="App-intro">
           <ToDoList
             taskList={this.state.taskList}
-            addTask={this.addTask}/>
+            addTask={this.addTask}
+            clearTask={this.state.clearTask}/>
+
         </p>
       </div>
     );

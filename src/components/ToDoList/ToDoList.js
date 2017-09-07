@@ -4,17 +4,27 @@ export default class ToDoList extends Component {
   constructor() {
     super()
     this.state = {
-      task: 'asdfsaf'
+      task: ''
     }
   }
 
-  componentWillReceiveProps(newProps, oldProps) {
-    console.log('newProps', newProps, 'oldProps', oldProps)
+  componentWillReceiveProps(nextProps) {
+    console.log('These are the updated props', nextProps)
+    console.log('These are the old props', this.props)
+    if(nextProps.clearTask === true) {
+      this.clearTask()
+    }
   }
 
   updateCurrentTask = (val) => {
     this.setState({
       task: val
+    })
+  }
+
+  clearTask = () => {
+    this.setState({
+      task: ''
     })
   }
 
