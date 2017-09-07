@@ -25,11 +25,11 @@ class App extends Component {
   }
 
   testing = () => {
-    console.log(this)
+    console.log('This function is bound to the App class and invoked in a child component', this)
   }
 
   thisTesting() {
-    console.log(this)
+    console.log('this function is not bound to the app class and when it is invoked, this refers to the props object, not the parent component', this)
   }
 
   render() {
@@ -48,6 +48,7 @@ class App extends Component {
             testing={this.testing}
             thisTesting={this.thisTesting}
             propExample={'I am the props object'}/>
+          <LukeComponent />
 
         </p>
       </div>

@@ -9,11 +9,11 @@ export default class ThisLogger extends Component {
   }
 
   testing = () => {
-    console.log(this)
+    console.log('This function is inside the ThisLogger component and bound to this', this)
   }
 
   thisTesting() {
-    console.log(this)
+    console.log('This function is inside the ThisLogger component, is not bound and is invoked inside of ThisLogger', this)
   }
 
   render() {
