@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { getPeople } from '../../services/apiGrabber';
+import {people} from '../services/fakeData';
 
 
 
@@ -14,11 +14,17 @@ export default class LukeComponent extends Component {
 
   componentDidMount() {
     console.log('I am firing ')
-    var people = getPeople()
+    var people = this.getPeople()
     this.setState({
       people: people
     })
   }
+
+ getPeople() {
+    return people;
+  }
+
+
   render() {
     return(
       <div>
