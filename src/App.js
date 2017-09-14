@@ -11,7 +11,7 @@ class App extends Component {
     super()
     this.state = {
       taskList: ['This is my first task'],
-      clearTask: false
+      clearTask: true
     }
   }
 
